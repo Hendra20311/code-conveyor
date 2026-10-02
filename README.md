@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SmartCodeConveyor: Otomasi Lab (MVP Level 1)
 
-## Getting Started
+> **Prototipe Media Pembelajaran Game Edukasi Berbasis Web dengan Fitur *Learning Analytics* untuk Melatih Logika Percabangan Siswa SMK**  
+> *Pengembangan Tugas Akhir / Skripsi — Program Studi S1 Pendidikan Teknologi Informasi, Universitas Negeri Surabaya*
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 📌 Gambaran Singkat Proyek
+**SmartCodeConveyor** adalah media pembelajaran interaktif berbasis simulasi pabrik otomasi (*industrial conveyor belt*). Media ini dirancang khusus untuk memfasilitasi pemahaman struktur kontrol logika **Percabangan (*Branching: IF-ELSE*)** pada mata pelajaran Informatika (Fase E SMK). 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Melalui metafora penyortiran paket otomatis, siswa belajar mengevaluasi kondisi logika (*boolean evaluation*) tanpa dibebani intimidasi sintaks teks konvensional, sekaligus memungkinkan perekaman perilaku berpikir siswa melalui instrumen *in-game telemetry*.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📸 Tampilan Antarmuka (MVP)
 
-## Learn More
+<img width="1167" height="698" alt="MVP CodeConveyor" src="https://github.com/user-attachments/assets/00c5d777-d244-46f8-b48f-f256a2c42147" />
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🕹️ Mekanisme Gameplay & Konsep Pembelajaran (Level 1)
+1. **Skenario Masalah:**
+   * Paket bergerak di atas sabuk konveyor menuju dua wadah penampung:
+     * **Bin A (Lurus):** Khusus paket normal berwana **Biru**.
+     * **Bin B (Bawah):** Khusus paket cacat (*hazard/recycle*) berwarna **Merah**.
+2. **Interaksi Logika Pemrograman:**
+   * Siswa bertindak sebagai teknisi sistem kendali dengan merumuskan aturan sensor:
+     $$\text{JIKA } (\text{Warna} == \text{MERAH}) \longrightarrow \text{Arahkan ke BIN B}, \quad \text{SELAIN ITU} \longrightarrow \text{Arahkan ke BIN A}$$
+3. **Eksekusi & Notional Machine:**
+   * Ketika tombol **Jalankan Konveyor** ditekan, mesin bergerak dan mengevaluasi alur logika secara visual, menunjukkan bagaimana sistem komputasi membuat keputusan percabangan.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 📊 Integrasi Learning Analytics (In-Game Telemetry)
+Setiap kali tombol eksekusi dijalankan, sistem mencatat data telemetri kognitif ke konsol sistem/database untuk analisis pola penalaran:
+* **`attempt_number`**: Jumlah percobaan yang dibutuhkan siswa hingga berhasil.
+* **`duration_seconds`**: Waktu berpikir siswa sebelum memutuskan eksekusi logika.
+* **`rules_constructed`**: Kombinasi aturan *IF-ELSE* yang disusun oleh siswa.
+* **`error_message`**: Deteksi miskonsepsi (contoh: paket cacat lolos ke Bin A atau paket normal terbuang ke Bin B).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🛠️ Tech Stack
+* **Framework:** Next.js (App Router, TypeScript)
+* **Game Engine:** Phaser 3 (Canvas/WebGL rendering & tween animation)
+* **Styling:** Tailwind CSS
+* **Version Control:** Git & GitHub
+
+---
